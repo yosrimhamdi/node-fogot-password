@@ -1,10 +1,10 @@
 import express from 'express';
-import forget from '../controllers/forget.js';
+import forgot from '../controllers/forgot.js';
 import reset from '../controllers/reset.js';
 
 const router = express.Router();
 
-router.post('/forget', forget);
+router.post('/forgot', forgot);
 router.patch('/reset/:token', reset);
 
 export default router;

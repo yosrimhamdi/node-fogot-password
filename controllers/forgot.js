@@ -10,5 +10,5 @@ export default async (req, res) => {
 
   // mailer.sendResetPassword(token);
 
-  res.json({ token });
+  res.render('forgotPassword');
 };
