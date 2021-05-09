@@ -8,6 +8,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post('password/forget', forget);
-app.post('password/reset/:token', reset);
+app.patch('password/reset/:token', reset);
 
 export default app;

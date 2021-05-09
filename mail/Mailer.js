@@ -16,13 +16,15 @@ class Mailer {
   }
 
   sendResetPasswordEmail(token) {
-    this.transporter.sendMail({
-      from: '"Fred Foo 👻" <foo@example.com>', // sender address
-      to: 'bar@example.com, baz@example.com', // list of receivers
-      subject: 'Hello ✔', // Subject line
-      text: 'Hello world?', // plain text body
-      html: `<a href="/password/reset/${token}">click</a>`, // html body
-    });
+    const options = {
+      from: '"Fred Foo 👻" <foo@example.com>',
+      to: 'bar@example.com, baz@example.com',
+      subject: 'Hello ✔',
+      text: 'Hello world?',
+      html: `<a href="/password/reset/${token}">click</a>`,
+    };
+
+    this.transporter.sendMail(options);
   }
 }
 
