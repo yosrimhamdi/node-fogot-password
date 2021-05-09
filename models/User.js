@@ -12,6 +12,7 @@ schema.methods.setupToken = async function () {
   const token = Token.generate();
 
   this.token = Token.hash(token);
+
   this.expiresIn = Date.now() + 10 * 60 * 1000;
 
   await this.save();
