@@ -6,9 +6,12 @@ export default async (req, res) => {
 
   const hashedToken = Token.hash(req.params.token);
 
-  const user = await User.findOne({ token: hashedToken });
+  const user = await User.findOne({
+    token: hashedToken,
+    expiresIn: { $gt: Date.now() },
+  });
 
-  if (user && Token.valid(user.expiresIn)) {
+  if (user) {
     await user.handlePasswordChange(password);
 
     res.send(`password changed to ${password}`);

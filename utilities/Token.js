@@ -8,10 +8,6 @@ class Token {
   static hash(token) {
     return crypto.createHash('sha256').update(token).digest('hex');
   }
-
-  static valid(expiresIn) {
-    return expiresIn < Date.now() + 10 * 60 * 1000;
-  }
 }
 
 export default Token;
