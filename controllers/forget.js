@@ -1,4 +1,4 @@
-import User from '../../models/User.js';
+import User from '../models/User.js';
 import Mailer from '../mail/Mailer.js';
 
 export default async (req, res) => {
@@ -8,7 +8,7 @@ export default async (req, res) => {
 
   const mailer = new Mailer();
 
-  mailer.sendResetPasswordEmail(token);
+  mailer.sendResetPassword(token);
 
   res.json({ token });
 };

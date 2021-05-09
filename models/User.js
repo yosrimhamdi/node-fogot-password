@@ -17,10 +17,13 @@ schema.methods.setupToken = async function () {
 
   await this.save();
 
+  console.log(this);
+
   return token;
 };
 
-schema.methods.clear = async function () {
+schema.methods.handlePasswordChange = async function (password) {
+  this.password = password;
   this.token = undefined;
   this.expiresIn = undefined;
 

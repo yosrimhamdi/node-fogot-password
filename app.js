@@ -1,13 +1,11 @@
 import express from 'express';
-import forget from './controllers/forget.js';
-import reset from './controllersreset.js';
+import passwordRouter from './routers/password.js';
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.post('password/forget', forget);
-app.patch('password/reset/:token', reset);
+app.use('/password', passwordRouter);
 
 export default app;

@@ -15,7 +15,7 @@ class Mailer {
     });
   }
 
-  sendResetPasswordEmail(token) {
+  sendResetPassword(token) {
     const options = {
       from: '"Fred Foo 👻" <foo@example.com>',
       to: 'bar@example.com, baz@example.com',
