@@ -6,9 +6,9 @@ export default async (req, res) => {
 
   const token = await user.setupToken();
 
-  const mailer = new Mailer();
+  // const mailer = new Mailer();
 
-  mailer.sendResetPassword(token);
+  // mailer.sendResetPassword(token);
 
   res.json({ token });
 };
