@@ -17,8 +17,6 @@ schema.methods.setupToken = async function () {
 
   await this.save();
 
-  console.log(this);
-
   return token;
 };
 
